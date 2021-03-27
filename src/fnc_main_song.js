@@ -16,7 +16,8 @@
 // 2015/7/3 Modified by Relick
 // added save/load function
 // 2018/11/26 Added to relick's github, changes tracked there
-// github.com/relick/touhou-song-sorter
+// 2021/03/26 Adapted to DJMAX Respect songs
+// github.com/shockdude/djmax-song-sorter
 
 // Execution code
 var ary_TempData	= new Array();
@@ -93,7 +94,6 @@ function startup()
 	}
 
 	getID('optImage').disabled = false;
-	getID('optArrange').disabled = false;
 
 	var tbl_foot_Select = createElement('tfoot');
 	tbl_Select.appendChild(tbl_foot_Select);
@@ -137,7 +137,6 @@ function init()
 {
 	int_Total = 0;
 	int_RecordID = 0;
-	var arranges = getID('optArrange').checked;
 	var sortTypes = getID('optSortType').options[getID('optSortType').selectedIndex].value;
 
 	// Add to the arrays only the tracks that we expect.
@@ -147,24 +146,26 @@ function init()
 		{
 			if ((ary_SongData[i][TRACK_TITLES][j] == 1) && getID('optSelect' + j).checked)
 			{
-				// Include only if a track is:
-				// - In a title we selected (already fulfilled)
-				// - Not excluded by being the incorrect track type for what was selected
-				// - Not excluded by being an arrange if disabled
-				const correctTrackType = (
-					sortTypes == 0 // Allow everything
-					|| (sortTypes == 1 && ary_SongData[i][TRACK_TYPE] !== OTHER_THEME) // Boss and stage only
-					|| (sortTypes == 2 && ary_SongData[i][TRACK_TYPE] === STAGE_THEME) // Stage only
-					|| (sortTypes == 3 && ary_SongData[i][TRACK_TYPE] === BOSS_THEME) // Boss only
-					|| ary_SongData[i][TRACK_TYPE] === STAGE_AND_BOSS_THEME // Included in all options
-				);
-				const correctArrangementType = arranges || (ary_SongData[i][TRACK_IS_ARRANGEMENT] === NOT_ARRANGEMENT);
-
-				if (correctTrackType && correctArrangementType)
+				// Link Disc Check
+				if (ary_SongData[i][TRACK_TYPE] !== LINK_DISC || 
+					(j !== LINK_CE && getID('optSelect' + LINK_CE).checked) ||
+					(j !== LINK_BS && getID('optSelect' + LINK_BS).checked) ||
+					(j !== LINK_T1 && getID('optSelect' + LINK_T1).checked))
 				{
-					ary_TempData[int_Total] = ary_SongData[i];
-					int_Total++;
-					break;
+					// Include only if a track is:
+					// - In a title we selected (already fulfilled)
+					// - Not excluded by being the incorrect track type for what was selected
+					const correctTrackType = (
+						sortTypes == 0 // Allow everything
+						|| (sortTypes == 1 && ary_SongData[i][TRACK_TYPE] !== V_EXCLUSIVE) // Non V Exclusives
+					);
+
+					if (correctTrackType)
+					{
+						ary_TempData[int_Total] = ary_SongData[i];
+						int_Total++;
+						break;
+					}
 				}
 			}
 		}
@@ -185,7 +186,6 @@ function init()
 		getID('optSelect_all').disabled = true;
 		$('.opt_foot').hide();
 		getID('optImage').disabled = true;
-		getID('optArrange').disabled = true;
 		setClass(getID('optTable'), 'optTable-disabled');
 	}
 
@@ -560,6 +560,7 @@ function fnc_ShowResults()
 		// Image
 		if (i < int_ResultRank) {
 			var new_img = createElement('img');
+			new_img.width = "180";
 			if (obj_TempData[TRACK_IMAGE].length > 0) {
 				new_img.src = str_ImgPath + obj_TempData[TRACK_IMAGE];
 				new_cell.appendChild(new_img);
@@ -575,7 +576,7 @@ function fnc_ShowResults()
 		}
 		else
 		{
-			textForEntry = obj_TempData[TRACK_DESCRIPTION] + " (" + obj_TempData[TRACK_TITLE_ABBREV] + ")";
+			textForEntry = obj_TempData[TRACK_ARTIST] + " (" + obj_TempData[TRACK_TITLE_ABBREV] + ")";
 		}
 		new_cell.appendChild(createText(textForEntry));
 		popup_TrackName[i] = textForEntry; // for popup window
@@ -638,6 +639,7 @@ function fnc_UpdateOptions()
 			else
 			{
 				var obj_Item = createElement("img");
+				obj_Item.width = "180";
 				obj_Item.src = str_ImgPath + obj_TempData[TRACK_IMAGE];
 				obj_Item.title = obj_TempData[TRACK_NAME];
 				obj_SelectItem.replaceChild(obj_Item, obj_SelectItem.firstChild);
@@ -647,6 +649,7 @@ function fnc_UpdateOptions()
 		{
 			//image
 			var obj_Item = createElement("img");
+			obj_Item.width = "180";
 			obj_Item.src = str_ImgPath + obj_TempData[TRACK_IMAGE];
 			obj_Item.title = obj_TempData[TRACK_NAME];
 			obj_SelectItem.replaceChild(obj_Item, obj_SelectItem.firstChild);
@@ -679,7 +682,7 @@ function fnc_UpdateOptions()
 		
 		var obj_Item = createElement("span");
 		obj_Item.id = (i == 0) ? "detailLeft" : "detailRight";
-		obj_Item.appendChild(createText(obj_TempData[TRACK_DESCRIPTION]));
+		obj_Item.appendChild(createText(obj_TempData[TRACK_ARTIST]));
 		obj_TexItem.replaceChild(obj_Item, obj_TexItem.childNodes[5]);
 	}
 
