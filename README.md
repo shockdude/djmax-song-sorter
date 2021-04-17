@@ -18,7 +18,8 @@ The elements, in order, are as follows:
 5. YouTube video ID.
 6. Game/album full title.
 7. Game/album abbreviated title.
-8. Game artist
+8. Song artist
 9. `1` if a regular song, `2` if V exclusive, `3` if link disc.
+10. `1` if short/non-extended mix, `2` if an extended mix.
 
 For more information, see [touhou-song-sorter](https://github.com/relick/touhou-song-sorter)

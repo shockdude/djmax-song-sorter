@@ -79,15 +79,14 @@
 						<span class="tb_lower"><label for="optImage">Embed videos while sorting</label> (warning: may be slow on some computers!)</span></div></td>
 				</tr>
 				<tr>
-					<td colspan="5">
-						<div class="center">
-							<label class="tb_lower" for="optSortType">Sort:</label>
-							<select name="optSortType" id="optSortType">
-								<option value="0" selected>Everything</option>
-								<option value="1">Non V-exclusives</option>
-							</select>
-						</div>
-					</td>
+					<td colspan="5"><div class="center">
+						<input id="optVExclusive" checked="checked" type="checkbox">
+						<span class="tb_lower"><label for="optVExclusive">Include V Exclusives</label> (uncheck to only include Respect PS4 songs).</span></div></td>
+				</tr>
+				<tr>
+					<td colspan="5"><div class="center">
+						<input id="optExtendedMix" checked="checked" type="checkbox">
+						<span class="tb_lower"><label for="optExtendedMix">Include Extended Mixes</label> (uncheck to ignore extended mixes).</span></div></td>
 				</tr>
 			</tfoot>
 		</table>
@@ -108,7 +107,7 @@
 
 	<div class="bottom-text" id="resultField">
 		<p>
-			If any albums/games are missing, please press CTRL+F5 first before reporting! The latest update was 27nd March 2021 (initial update).<br>
+			If any albums/games are missing, please press CTRL+F5 first before reporting! The latest update was 16th April 2021 (Portable 3 update).<br>
 			<br>
 			This is a sorter for DJMAX Respect songs. Pick your sources, and hit the Start button.<br>
 			Click on the song you like better from the two, or tie them if you like them equally or don't know them.<br>
@@ -117,8 +116,9 @@
 			<br>
 			If there are any issues, such as missing videos, you can check out the <a href="https://github.com/shockdude/djmax-song-sorter" target="_blank">github</a><br>
 			<br>
+			Song metadata from <a href="http://cyphergate.net/index.php?title=DJMAX_RESPECT:Tracklist">Cypher Gate Wiki</a><br>
 			Based on <a href="https://kasha.dev/song/">Touhou Song Sorter</a> (<a href="https://github.com/relick/touhou-song-sorter">github</a>)<br>
-			which is itself based on <a href="https://execfera.github.io/charasort/">charasort</a> (<a href="https://github.com/execfera/charasort/">github</a>)
+			Also related: <a href="https://execfera.github.io/charasort/">charasort</a> (<a href="https://github.com/execfera/charasort/">github</a>)
 		</p>
 	</div>
 </body>

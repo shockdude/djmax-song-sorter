@@ -16,7 +16,7 @@
 // 2015/7/3 Modified by Relick
 // added save/load function
 // 2018/11/26 Added to relick's github, changes tracked there
-// 2021/03/26 Adapted to DJMAX Respect songs
+// 2021/03/26 Adapted to DJMAX Respect songs by shockdude
 // github.com/shockdude/djmax-song-sorter
 
 // Execution code
@@ -94,6 +94,8 @@ function startup()
 	}
 
 	getID('optImage').disabled = false;
+	getID('optVExclusive').disabled = false;
+	getID('optExtendedMix').disabled = false;
 
 	var tbl_foot_Select = createElement('tfoot');
 	tbl_Select.appendChild(tbl_foot_Select);
@@ -137,7 +139,8 @@ function init()
 {
 	int_Total = 0;
 	int_RecordID = 0;
-	var sortTypes = getID('optSortType').options[getID('optSortType').selectedIndex].value;
+	var vExclusive = getID('optVExclusive').checked;
+	var extendedMixes = getID('optExtendedMix').checked;
 
 	// Add to the arrays only the tracks that we expect.
 	for (i=0; i < ary_SongData.length; i++)
@@ -155,12 +158,10 @@ function init()
 					// Include only if a track is:
 					// - In a title we selected (already fulfilled)
 					// - Not excluded by being the incorrect track type for what was selected
-					const correctTrackType = (
-						sortTypes == 0 // Allow everything
-						|| (sortTypes == 1 && ary_SongData[i][TRACK_TYPE] !== V_EXCLUSIVE) // Non V Exclusives
-					);
+					const correctVExclusive = vExclusive || (ary_SongData[i][TRACK_TYPE] !== V_EXCLUSIVE);
+					const correctExtendedMix = extendedMixes || (ary_SongData[i][EXTENDED_TYPE] !== EXTENDED_MIX);
 
-					if (correctTrackType)
+					if (correctVExclusive && correctExtendedMix)
 					{
 						ary_TempData[int_Total] = ary_SongData[i];
 						int_Total++;
@@ -186,6 +187,8 @@ function init()
 		getID('optSelect_all').disabled = true;
 		$('.opt_foot').hide();
 		getID('optImage').disabled = true;
+		getID('optVExclusive').disabled = true;
+		getID('optExtendedMix').disabled = true;
 		setClass(getID('optTable'), 'optTable-disabled');
 	}
 
