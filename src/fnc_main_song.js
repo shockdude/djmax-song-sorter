@@ -96,6 +96,8 @@ function startup()
 	getID('optImage').disabled = false;
 	getID('optVExclusive').disabled = false;
 	getID('optExtendedMix').disabled = false;
+	getID('optObeyLinkDisc').disabled = false;
+	getID('optShuffleSongs').disabled = false;
 
 	var tbl_foot_Select = createElement('tfoot');
 	tbl_Select.appendChild(tbl_foot_Select);
@@ -132,6 +134,25 @@ function chgAll()
 	}
 }
 
+// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+function shuffle(array) {
+	var currentIndex = array.length, randomIndex;
+
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex--;
+
+		// And swap it with the current element.
+		[array[currentIndex], array[randomIndex]] = [
+			array[randomIndex], array[currentIndex]];
+	}
+
+	return array;
+}
+
 // *****************************************************************************
 // * Initialise arrays and counters that will be used for sorting
 // * Only happens once
@@ -141,6 +162,8 @@ function init()
 	int_RecordID = 0;
 	var vExclusive = getID('optVExclusive').checked;
 	var extendedMixes = getID('optExtendedMix').checked;
+	var obeyLinkDisc = getID('optObeyLinkDisc').checked;
+	var shuffleSongs = getID('optShuffleSongs').checked;
 
 	// Add to the arrays only the tracks that we expect.
 	for (i=0; i < ary_SongData.length; i++)
@@ -150,7 +173,7 @@ function init()
 			if ((ary_SongData[i][TRACK_TITLES][j] == 1) && getID('optSelect' + j).checked)
 			{
 				// Link Disc Check
-				if (ary_SongData[i][TRACK_TYPE] !== LINK_DISC || 
+				if (!obeyLinkDisc || ary_SongData[i][TRACK_TYPE] !== LINK_DISC || 
 					(j !== LINK_CE && getID('optSelect' + LINK_CE).checked) ||
 					(j !== LINK_BS && getID('optSelect' + LINK_BS).checked) ||
 					(j !== LINK_T1 && getID('optSelect' + LINK_T1).checked))
@@ -189,12 +212,18 @@ function init()
 		getID('optImage').disabled = true;
 		getID('optVExclusive').disabled = true;
 		getID('optExtendedMix').disabled = true;
+		getID('optObeyLinkDisc').disabled = true;
+		getID('optShuffleSongs').disabled = true;
 		setClass(getID('optTable'), 'optTable-disabled');
 	}
 
 	int_Total = 0;
 
-	// TempData contains the songs we want to sort, store it into our sorting arrays.
+	// TempData contains the songs we want to sort, shuffle it and then store it into our sorting arrays.
+	if (shuffleSongs)
+	{
+		ary_TempData = shuffle(ary_TempData)
+	}
 	ary_SortData[0] = new Array();
 	for (i=0; i < ary_TempData.length; i++)
 	{

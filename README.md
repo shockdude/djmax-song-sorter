@@ -6,7 +6,7 @@ manually merge sort your favourite djmax respect songs
 All of the song data is found at [src/fnc_data_song.js](./src/fnc_data_song.js), defined in the array `ary_SongData`. Each song's data is an array with a specific number of elements; for example:
 
 ```json
-[1, "2Nite", [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "xuBQ7dGdj_s", "Respect", "DMR", "ND Lee", REGULAR_SONG],
+[1, "2Nite", [1,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "xuBQ7dGdj_s", "Respect", "DMR", "ND Lee", REGULAR_SONG, SHORT_MIX],
 ```
 
 The elements, in order, are as follows:

@@ -300,6 +300,7 @@ var ary_SongData = [
 	[1, "Forever",							[0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1300210/capsule_616x353.jpg", "2rUyE0TBaYU", "Clazziquai Edition", "DMCE", "BEXTER", REGULAR_SONG, SHORT_MIX],
 	[1, "Freedom",							[0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1300210/capsule_616x353.jpg", "SzzWapLwWCU", "Clazziquai Edition", "DMCE", "Clazziquai", REGULAR_SONG, SHORT_MIX],
 	[1, "Here in the Moment",				[0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1300210/capsule_616x353.jpg", "suuauPUw6V8", "Clazziquai Edition", "DMCE", "Ruby Tuesday", REGULAR_SONG, SHORT_MIX],
+	[1, "Here in the Moment ~Extended Mix~",[0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1300210/capsule_616x353.jpg", "SdCfQbqOGL4", "Clazziquai Edition", "DMCE", "Ruby Tuesday", LINK_DISC, EXTENDED_MIX],
 	[1, "In My Heart",						[0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1300210/capsule_616x353.jpg", "FoQLo1dW3qE", "Clazziquai Edition", "DMCE", "Tsukasa", REGULAR_SONG, SHORT_MIX],
 	[1, "Love Mode",						[0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1300210/capsule_616x353.jpg", "1PlY3kvGt18", "Clazziquai Edition", "DMCE", "Clazziquai", REGULAR_SONG, SHORT_MIX],
 	[1, "Lover (CE Style)",					[0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1300210/capsule_616x353.jpg", "uPxrdsJAA14", "Clazziquai Edition", "DMCE", "ND Lee", REGULAR_SONG, SHORT_MIX],
@@ -313,6 +314,7 @@ var ary_SongData = [
 
 	// Black Square
 	[1, "ANALYS",							[0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "Y8GOUA747Ig", "Respect", "DMR", "HAYAKO", REGULAR_SONG, SHORT_MIX],
+	[1, "Airwave ~Extended Mix~",			[0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1300211/capsule_616x353.jpg", "TE8ChoO0Cu8", "Black Square", "DMBS", "ReX", LINK_DISC, EXTENDED_MIX],
 	[1, "Beat U Down",						[0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1300211/capsule_616x353.jpg", "Eoi0GlSWt2Y", "Black Square", "DMBS", "makou", REGULAR_SONG, SHORT_MIX],
 	[1, "Colours of Sorrow",				[0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1300211/capsule_616x353.jpg", "htmqGeIABYc", "Black Square", "DMBS", "Tsukasa", REGULAR_SONG, SHORT_MIX],
 	[1, "Cypher Gate",						[0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1300211/capsule_616x353.jpg", "IssTYZ4mwWU", "Black Square", "DMBS", "7 Sequence", REGULAR_SONG, SHORT_MIX],
@@ -351,16 +353,12 @@ var ary_SongData = [
 	[1, "Remember",						[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1386610/capsule_616x353.jpg", "XhIjYzsaPIg", "Technika 1", "DMT1", "Lin-G", REGULAR_SONG, SHORT_MIX],
 	[1, "Shoreline",					[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1386610/capsule_616x353.jpg", "bCDCYRBHzGk", "Technika 1", "DMT1", "Oriental ST8", REGULAR_SONG, SHORT_MIX],
 	[1, "SON OF SUN",					[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1386610/capsule_616x353.jpg", "BCRkabc_NTM", "Technika 1", "DMT1", "Hosoe Shinji", REGULAR_SONG, SHORT_MIX],
+	[1, "SON OF SUN ~Extended Mix~",	[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1386610/capsule_616x353.jpg", "OBqoKJtu_5k", "Technika 1", "DMT1", "Hosoe Shinji", LINK_DISC, EXTENDED_MIX],
 	[1, "Supersonic",					[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1386610/capsule_616x353.jpg", "893RlJyO-wc", "Technika 1", "DMT1", "Planetboom", REGULAR_SONG, SHORT_MIX],
 	[1, "Sweet Shining Shooting Star",	[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1386610/capsule_616x353.jpg", "E9VuY2z54YI", "Technika 1", "DMT1", "Croove", REGULAR_SONG, SHORT_MIX],
 	[1, "The Last Dance",				[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1386610/capsule_616x353.jpg", "hAr8CJZtIjc", "Technika 1", "DMT1", "Urbatronic Chopsticks", REGULAR_SONG, SHORT_MIX],
 	[1, "Thor",							[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1386610/capsule_616x353.jpg", "oUbF_SGie58", "Technika 1", "DMT1", "XeoN", REGULAR_SONG, SHORT_MIX],
 	[1, "Voyage",						[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1386610/capsule_616x353.jpg", "zBbXvOdBV6c", "Technika 1", "DMT1", "makou", REGULAR_SONG, SHORT_MIX],
-	
-	// Link Disc
-	[1, "Here in the Moment ~Extended Mix~",	[0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1300210/capsule_616x353.jpg", "SdCfQbqOGL4", "Clazziquai Edition", "DMCE", "Ruby Tuesday", LINK_DISC, EXTENDED_MIX],
-	[1, "SON OF SUN ~Extended Mix~",			[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1386610/capsule_616x353.jpg", "OBqoKJtu_5k", "Technika 1", "DMT1", "Hosoe Shinji", LINK_DISC, EXTENDED_MIX],
-	[1, "Airwave ~Extended Mix~",				[0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/1300211/capsule_616x353.jpg", "TE8ChoO0Cu8", "Black Square", "DMBS", "ReX", LINK_DISC, EXTENDED_MIX],
 	
 	// Technika 2
 	[1, "End of Mythology",				[0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "G3aRgjqL_I8", "Respect", "DMR", "Alice Schach and the Magic Orchestra", REGULAR_SONG, SHORT_MIX],
