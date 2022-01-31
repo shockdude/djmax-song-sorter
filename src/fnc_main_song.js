@@ -178,17 +178,22 @@ function init()
 					(j !== LINK_BS && getID('optSelect' + LINK_BS).checked) ||
 					(j !== LINK_T1 && getID('optSelect' + LINK_T1).checked))
 				{
-					// Include only if a track is:
-					// - In a title we selected (already fulfilled)
-					// - Not excluded by being the incorrect track type for what was selected
-					const correctVExclusive = vExclusive || (ary_SongData[i][TRACK_TYPE] !== V_EXCLUSIVE);
-					const correctExtendedMix = extendedMixes || (ary_SongData[i][EXTENDED_TYPE] !== EXTENDED_MIX);
-
-					if (correctVExclusive && correctExtendedMix)
+					// V Link Check
+					if (!obeyLinkDisc || ary_SongData[i][TRACK_TYPE] !== V_LINK ||
+						(getID('optSelect' + LINK_V1).checked && getID('optSelect' + LINK_V2).checked))
 					{
-						ary_TempData[int_Total] = ary_SongData[i];
-						int_Total++;
-						break;
+						// Include only if a track is:
+						// - In a title we selected (already fulfilled)
+						// - Not excluded by being the incorrect track type for what was selected
+						const correctVExclusive = vExclusive || (ary_SongData[i][TRACK_TYPE] !== V_EXCLUSIVE);
+						const correctExtendedMix = extendedMixes || (ary_SongData[i][EXTENDED_TYPE] !== EXTENDED_MIX);
+
+						if (correctVExclusive && correctExtendedMix)
+						{
+							ary_TempData[int_Total] = ary_SongData[i];
+							int_Total++;
+							break;
+						}
 					}
 				}
 			}
