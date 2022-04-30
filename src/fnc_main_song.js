@@ -597,12 +597,14 @@ function fnc_ShowResults()
 		// Image
 		if (i < int_ResultRank) {
 			var new_img = createElement('img');
-			new_img.width = "180";
-			if (obj_TempData[TRACK_IMAGE].length > 0) {
-				new_img.src = str_ImgPath + obj_TempData[TRACK_IMAGE];
-				new_cell.appendChild(new_img);
-				new_cell.appendChild(createElement('br'));
+			new_img.width = "50";
+			if (obj_TempData[TRACK_THUMB].length > 0) {
+				new_img.src = str_ThumbPath + obj_TempData[TRACK_THUMB];
+			} else {
+				new_img.src = obj_TempData[TRACK_IMAGE];
 			}
+			new_cell.appendChild(new_img);
+			new_cell.appendChild(createElement('br'));
 		}
 
 		// Name
@@ -676,8 +678,12 @@ function fnc_UpdateOptions()
 			else
 			{
 				var obj_Item = createElement("img");
-				obj_Item.width = "180";
-				obj_Item.src = str_ImgPath + obj_TempData[TRACK_IMAGE];
+				obj_Item.width = "120";
+				if (obj_TempData[TRACK_THUMB].length > 0) {
+					obj_Item.src = str_ThumbPath + obj_TempData[TRACK_THUMB];
+				} else {
+					obj_Item.src = obj_TempData[TRACK_IMAGE];
+				}
 				obj_Item.title = obj_TempData[TRACK_NAME];
 				obj_SelectItem.replaceChild(obj_Item, obj_SelectItem.firstChild);
 			}
@@ -686,8 +692,12 @@ function fnc_UpdateOptions()
 		{
 			//image
 			var obj_Item = createElement("img");
-			obj_Item.width = "180";
-			obj_Item.src = str_ImgPath + obj_TempData[TRACK_IMAGE];
+			obj_Item.width = "120";
+			if (obj_TempData[TRACK_THUMB].length > 0) {
+				obj_Item.src = str_ThumbPath + obj_TempData[TRACK_THUMB];
+			} else {
+				obj_Item.src = obj_TempData[TRACK_IMAGE];
+			}
 			obj_Item.title = obj_TempData[TRACK_NAME];
 			obj_SelectItem.replaceChild(obj_Item, obj_SelectItem.firstChild);
 			
