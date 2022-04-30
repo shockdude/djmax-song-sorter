@@ -673,6 +673,7 @@ function fnc_UpdateOptions()
 				obj_Item.height = "180";
 				obj_Item.frameBorder = "0";
 				obj_Item.src = str_YouPath + obj_TempData[TRACK_YOUTUBE_ID];
+				obj_Item.setAttribute("allowfullscreen", 1)
 				obj_SelectItem.replaceChild(obj_Item, obj_SelectItem.firstChild);
 			}
 			else
