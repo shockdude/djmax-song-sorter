@@ -22,7 +22,7 @@ var maxRows = 40;
 
 // * Game and album titles
 var ary_TitleData = [
-	  "Respect"
+	  "RESPECT"
 	, "Portable 1"
 	, "Portable 2"
 	, "Trilogy"
@@ -99,7 +99,7 @@ const EXTENDED_TYPE = 10;
 	const EXTENDED_MIX = 2;
 
 var ary_SongData = [
-	//Respect
+	//RESPECT
 	[1, "2Nite",									[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "2nite1png.png", "nQkEdHSGFXI", "Respect", "DMR", "ND Lee", REGULAR_SONG, SHORT_MIX],
 	[1, "Airlock",									[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "zz1651337859airlock1png.png", "nIbvm1dl49A", "Respect", "DMR", "XeoN", REGULAR_SONG, SHORT_MIX],
 	[1, "Alone",									[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "zz1643144179alonenauts1png.png", "X9oJIzt0H2E", "Respect", "DMR", "Nauts", REGULAR_SONG, SHORT_MIX],
@@ -133,6 +133,7 @@ var ary_SongData = [
 	[1, "Heavenly",									[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "heavenly1png.png", "ymAnkXRsfVU", "Respect", "DMR", "makou", REGULAR_SONG, SHORT_MIX],
 	[1, "I Want You ~Twinkle Twinkle Sunshine~",	[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "i-want-you--sunshine1png.png", "MJNeTD4YqrI", "Respect", "DMR", "Studio LAY-BACK", REGULAR_SONG, SHORT_MIX],
 	[1, "I'M ALIVE",								[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "zzzzz-1685647799imalive1.png", "j-V5KCS0zro", "Respect", "DMR", "Laurent Newfield", REGULAR_SONG, SHORT_MIX],
+	[1, "Kamui",									[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "", "lce46O3UBzg", "Respect", "DMR", "TJ.hangneil", REGULAR_SONG, SHORT_MIX],
 	[1, "Karma",									[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "karmapng.png", "30OUrSI4PQk", "Respect", "DMR", "ampstyle", REGULAR_SONG, SHORT_MIX],
 	[1, "KILLER BEE",								[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "killer-bee1png.png", "FEOBwiOmvfQ", "Respect", "DMR", "GOTH", REGULAR_SONG, SHORT_MIX],
 	[1, "Kingdom",									[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "kingdom1png.png", "Z9Iif6LrO9M", "Respect", "DMR", "Phantom Sage", REGULAR_SONG, SHORT_MIX],
@@ -730,8 +731,10 @@ var ary_SongData = [
 	[1, "Weaponize",						[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/2307471/capsule_616x353.jpg", "zzzzz-1685647858weaponize1.png", "P32V2F0-OrM", "V Extension IV", "VE4", "causeluve", REGULAR_SONG, SHORT_MIX],
 	
 	// Clear Pass+
-	[1, "SURVIVOR",					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "zzzzz-1703703577survivor1.png", "ZCbXPsWhiMU", "CLEAR PASS+", "CP+", "jam-jam", V_EXCLUSIVE, SHORT_MIX],
 	[1, "From Hell to Breakfast",	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "zzzzz-1694106514fromhelltobreakfast1.png", "G8x1w92vTR0", "CLEAR PASS+", "CP+", "Daisuke Kurosawa", V_EXCLUSIVE, SHORT_MIX],
+	[1, "Re:BIRTH",					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "", "86QevpQy3FA", "CLEAR PASS+", "CP+", "kanone", V_EXCLUSIVE, SHORT_MIX],
+	[1, "SURVIVOR",					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/960170/capsule_616x353.jpg", "zzzzz-1703703577survivor1.png", "ZCbXPsWhiMU", "CLEAR PASS+", "CP+", "jam-jam", V_EXCLUSIVE, SHORT_MIX],
+	
 	
 	// MapleStory
 	[1, "Ariant ~ned Remix~",							[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/2530380/capsule_616x353.jpg", "zzzzz-1703703526ariantnedremix1.png", "gyX2YOO4k14", "MapleStory", "MAP", "ned", V_EXCLUSIVE, SHORT_MIX],
@@ -757,7 +760,7 @@ var ary_SongData = [
 	[1, "Carrot Carrot",						[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/2681820/capsule_616x353.jpg", "zzzzz-1703703834carrotcarrot1.png", "1EJcaxYMZzQ", "V Extension V", "VE5", "Sobrem", REGULAR_SONG, SHORT_MIX],
 	[1, "Critical Point",						[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/2681820/capsule_616x353.jpg", "zzzzz-1703703834criticalpoint1.png", "053zzds7krg", "V Extension V", "VE5", "ND Lee", REGULAR_SONG, SHORT_MIX],
 	[1, "ECiLA",								[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/2681820/capsule_616x353.jpg", "zzzzz-1703703834ecila1.png", "HrCbbH92nr4", "V Extension V", "VE5", "seibin", REGULAR_SONG, SHORT_MIX],
-	[1, "glory MAX -to the MAXimum-",			[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/2681820/capsule_616x353.jpg", "zzzzz-1703703834glorymax--1.png", "JJplwXfW-dI", "V Extension V", "VE5", "TAK", REGULAR_SONG, SHORT_MIX],
+	[1, "glory MAX -to the MAXimum-",			[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/2681820/capsule_616x353.jpg", "zzzzz-1703703834glorymax--1.png", "maAR5SHBO2E", "V Extension V", "VE5", "TAK", REGULAR_SONG, SHORT_MIX],
 	[1, "God Machine",							[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/2681820/capsule_616x353.jpg", "zzzzz-1703703834godmachine1.png", "D_jTxVkpMTI", "V Extension V", "VE5", "VoidRover", REGULAR_SONG, SHORT_MIX],
 	[1, "Inside the Light",						[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/2681820/capsule_616x353.jpg", "zzzzz-1703703834insidethelight1.png", "1FoOxncuMiY", "V Extension V", "VE5", "danbi", REGULAR_SONG, SHORT_MIX],
 	[1, "My Wonderland",						[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0], "https://cdn.cloudflare.steamstatic.com/steam/apps/2681820/capsule_616x353.jpg", "zzzzz-1703703834mywonderland1.png", "mNEO5mLD-34", "V Extension V", "VE5", "NieN", REGULAR_SONG, SHORT_MIX],
