@@ -186,17 +186,22 @@ function init()
 						if (!obeyLinkDisc || ary_SongData[i][TRACK_TYPE] !== V_LINK2 ||
 							(getID('optSelect' + LINK_V3).checked && getID('optSelect' + LINK_V4).checked))
 						{
-							// Include only if a track is:
-							// - In a title we selected (already fulfilled)
-							// - Not excluded by being the incorrect track type for what was selected
-							const correctVExclusive = vExclusive || (ary_SongData[i][TRACK_TYPE] !== V_EXCLUSIVE);
-							const correctExtendedMix = extendedMixes || (ary_SongData[i][EXTENDED_TYPE] !== EXTENDED_MIX);
-
-							if (correctVExclusive && correctExtendedMix)
+							// V Link III Check
+							if (!obeyLinkDisc || ary_SongData[i][TRACK_TYPE] !== V_LINK3 ||
+								(getID('optSelect' + LINK_L1).checked && getID('optSelect' + LINK_L2).checked))
 							{
-								ary_TempData[int_Total] = ary_SongData[i];
-								int_Total++;
-								break;
+								// Include only if a track is:
+								// - In a title we selected (already fulfilled)
+								// - Not excluded by being the incorrect track type for what was selected
+								const correctVExclusive = vExclusive || (ary_SongData[i][TRACK_TYPE] !== V_EXCLUSIVE);
+								const correctExtendedMix = extendedMixes || (ary_SongData[i][EXTENDED_TYPE] !== EXTENDED_MIX);
+
+								if (correctVExclusive && correctExtendedMix)
+								{
+									ary_TempData[int_Total] = ary_SongData[i];
+									int_Total++;
+									break;
+								}
 							}
 						}
 					}
@@ -604,7 +609,12 @@ function fnc_ShowResults()
 			var new_img = createElement('img');
 			new_img.width = "50";
 			if (obj_TempData[TRACK_THUMB].length > 0) {
-				new_img.src = str_ThumbPath + obj_TempData[TRACK_THUMB];
+				// alternate thumbnail path for V Liberty & newer, and Clear Pass+
+				if (obj_TempData[TRACK_TITLE_INDEX] < LINK_L1 && obj_TempData[TRACK_TITLE_INDEX] != 28) {
+					new_img.src = str_ThumbPath + obj_TempData[TRACK_THUMB];
+				} else {
+					new_img.src = str_ThumbPath2 + obj_TempData[TRACK_THUMB];
+				}
 			} else {
 				new_img.src = obj_TempData[TRACK_IMAGE];
 			}
@@ -616,11 +626,11 @@ function fnc_ShowResults()
 		var textForEntry = "";
 		if (!displayType)
 		{
-			textForEntry = obj_TempData[TRACK_NAME] + " (" + obj_TempData[TRACK_TITLE_ABBREV] + ")";
+			textForEntry = obj_TempData[TRACK_NAME] + " (" + ary_AbbrevData[obj_TempData[TRACK_TITLE_INDEX]] + ")";
 		}
 		else
 		{
-			textForEntry = obj_TempData[TRACK_ARTIST] + " (" + obj_TempData[TRACK_TITLE_ABBREV] + ")";
+			textForEntry = obj_TempData[TRACK_ARTIST] + " (" + ary_AbbrevData[obj_TempData[TRACK_TITLE_INDEX]] + ")";
 		}
 		new_cell.appendChild(createText(textForEntry));
 		popup_TrackName[i] = textForEntry; // for popup window
@@ -686,7 +696,12 @@ function fnc_UpdateOptions()
 				var obj_Item = createElement("img");
 				obj_Item.width = "120";
 				if (obj_TempData[TRACK_THUMB].length > 0) {
-					obj_Item.src = str_ThumbPath + obj_TempData[TRACK_THUMB];
+					// alternate thumbnail path for V Liberty & newer, and Clear Pass+
+					if (obj_TempData[TRACK_TITLE_INDEX] < LINK_L1 && obj_TempData[TRACK_TITLE_INDEX] != 28) {
+						obj_Item.src = str_ThumbPath + obj_TempData[TRACK_THUMB];
+					} else {
+						obj_Item.src = str_ThumbPath2 + obj_TempData[TRACK_THUMB];
+					}
 				} else {
 					obj_Item.src = obj_TempData[TRACK_IMAGE];
 				}
@@ -700,7 +715,12 @@ function fnc_UpdateOptions()
 			var obj_Item = createElement("img");
 			obj_Item.width = "120";
 			if (obj_TempData[TRACK_THUMB].length > 0) {
-				obj_Item.src = str_ThumbPath + obj_TempData[TRACK_THUMB];
+				// alternate thumbnail path for V Liberty & newer, and Clear Pass+
+				if (obj_TempData[TRACK_TITLE_INDEX] < LINK_L1 && obj_TempData[TRACK_TITLE_INDEX] != 28) {
+					obj_Item.src = str_ThumbPath + obj_TempData[TRACK_THUMB];
+				} else {
+					obj_Item.src = str_ThumbPath2 + obj_TempData[TRACK_THUMB];
+				}
 			} else {
 				obj_Item.src = obj_TempData[TRACK_IMAGE];
 			}
@@ -730,7 +750,7 @@ function fnc_UpdateOptions()
 		
 		var obj_Item = createElement("span");
 		obj_Item.id = (i == 0) ? "gameLeft" : "gameRight";
-		obj_Item.appendChild(createText(obj_TempData[TRACK_TITLE_NAME]));
+		obj_Item.appendChild(createText(ary_TitleData[obj_TempData[TRACK_TITLE_INDEX]]));
 		obj_TexItem.replaceChild(obj_Item, obj_TexItem.childNodes[2]);
 		
 		var obj_Item = createElement("span");
